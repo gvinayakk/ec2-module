@@ -1,14 +1,18 @@
 Once you have the terraform-controller running with CRDS applied, applying the yaml files under the current directory will produce following:
 
+```
 kubectl get executions.terraformcontroller.cattle.io -A
 NAMESPACE              NAME             AGE
 terraform-controller   my-state-fj55v   23m
-GVINAYAK-M-401B:terraform-controller gvinayak$ kubectl get states.terraformcontroller.cattle.io -A
+
+kubectl get states.terraformcontroller.cattle.io -A
 NAMESPACE              NAME       AGE
 terraform-controller   my-state   29m
-GVINAYAK-M-401B:terraform-controller gvinayak$ kubectl get modules.terraformcontroller.cattle.io -A
+
+kubectl get modules.terraformcontroller.cattle.io -A
 NAMESPACE              NAME        AGE
 terraform-controller   my-module   29m
+```
 
 
 The execution CRD will trigger a job and does contain the executor image passing environment variables, secrets as needed. In this case, the job triggers a pod and fails with following in logs:
