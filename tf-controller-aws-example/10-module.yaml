@@ -1,0 +1,7 @@
+apiVersion: terraformcontroller.cattle.io/v1
+kind: Module
+metadata:
+  name: my-module
+spec:
+  git:
+    url: https://github.com/gvinayakk/ec2-module
